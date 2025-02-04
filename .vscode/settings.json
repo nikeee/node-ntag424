@@ -1,0 +1,15 @@
+{
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+      "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc",
+      "*.js": "$(capture).test.js,$(capture).test.json,$(capture).d.ts",
+      "*.ts": "$(capture).test.ts,$(capture).test.json,$(capture).d.ts"
+    },
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "[javascript]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+  }

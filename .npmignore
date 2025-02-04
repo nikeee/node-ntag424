@@ -1,0 +1,13 @@
+node_modules
+.github
+.vscode
+biome.json
+*.test.js
+*.test.ts
+*.test.d.ts
+*.test.json
+*.md
+.editorconfig
+/src
+tsconfig.json
+/example

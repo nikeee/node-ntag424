@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "nodenext",
+
+        "lib": ["es2024"],
+        "declaration": true,
+        "outDir": "lib",
+
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+
+        "erasableSyntaxOnly": true,
+
+        "strict": true,
+        "noImplicitReturns": true,
+
+        "allowImportingTsExtensions": true,
+        "rewriteRelativeImportExtensions": true,
+        "verbatimModuleSyntax": true,
+        "esModuleInterop": true,
+    },
+    "exclude": ["example/**"]
+}

@@ -1,0 +1,38 @@
+{
+    "name": "ntag424",
+    "version": "0.1.0",
+    "description": "A Node.js implementation for interop with NTAG 424 DNA.",
+    "author": "Niklas Mollenhauer",
+    "license": "AGPL-3.0-only",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "type": "module",
+    "scripts": {
+        "test": "tsc --noEmit && node --test",
+        "ci": "biome ci ./src",
+        "lint": "biome lint ./src",
+        "format": "biome format --write ./src && biome lint --write ./src && biome check --write ./src",
+        "clean": "rimraf lib",
+        "compile": "tsc",
+        "prepare": "npm run clean && npm run compile"
+    },
+    "keywords": [
+        "ntag424",
+        "encryption",
+        "nxp",
+        "AN12196",
+        "NT4H2421Gx"
+    ],
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
+        "@types/node": "^22.13.0",
+        "expect": "^29.7.0",
+        "ndef": "^0.2.0",
+        "rimraf": "^6.0.1",
+        "typescript": "^5.8.0-beta"
+    },
+    "dependencies": {
+        "@nikeee/aes-cmac": "^1.1.0",
+        "crc": "^4.3.2"
+    }
+}
