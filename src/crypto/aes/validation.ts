@@ -2,16 +2,26 @@ import * as ntagCrypto from "./crypto.ts";
 
 import MAC from "@nikeee/aes-cmac";
 
+export type DecryptdPiccData = {
+	/** `null` if the encryted PICC data did not contain the UID. */
+	uid: Buffer | null;
+	/** `null` if the encryted PICC data did not contain the counter. */
+	counter: number | null;
+};
+
 /**
- * @param decryptionKey Usually the key of metaRead
- * @param macKey Usually the key of fileRead
+ * Decrypts + validates encrypted PICC data.
+ *
+ * @param decryptionKey Usually the key of metaRead.
+ * @param macKey Usually the key of fileRead.
+ * @returns {DecryptdPiccData | null} `null` if the CMAC signature did not match.
  */
 export function validateAndDecryptPicc(
 	decryptionKey: Buffer,
 	macKey: Buffer,
 	encryptedPicc: Buffer,
 	signatureMac: Buffer,
-): { uid: Buffer | null; counter: number | null } | null {
+): DecryptdPiccData | null {
 	const decrypted = ntagCrypto.decryptCbc(
 		decryptionKey,
 		encryptedPicc,
@@ -41,15 +51,19 @@ export function validateAndDecryptPicc(
 	return isValid ? { uid, counter } : null;
 }
 
+/**
+ * Validates plain text data like the UID and/or the counter using the CMAC.
+ * @returns {boolean} `true` if the CMAC signature matches the data + key.
+ */
 export function validatePlainPiccMac(
 	fileReadKey: Buffer,
-	nfcUid: Buffer | null,
+	uid: Buffer | null,
 	counter: number | null,
 	signatureMac: Buffer,
-) {
+): boolean {
 	const sv2 = createSessionVector(
 		Buffer.from("3cc300010080", "hex"),
-		nfcUid,
+		uid,
 		counter,
 	);
 
