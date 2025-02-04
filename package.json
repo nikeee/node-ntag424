@@ -34,5 +34,9 @@
     "dependencies": {
         "@nikeee/aes-cmac": "^1.1.0",
         "crc": "^4.3.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nikeee/node-ntag424.git^"
     }
 }
