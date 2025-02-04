@@ -37,6 +37,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/nikeee/node-ntag424.git^"
+        "url": "https://github.com/nikeee/node-ntag424"
     }
 }
