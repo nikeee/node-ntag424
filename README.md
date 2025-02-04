@@ -11,6 +11,13 @@
 - You can use [`nistkdf-800-108`](https://github.com/nikeee/nistkdf-800-108) for key diversification/derivation.
 - [`ndef`](https://github.com/don/ndef-js) to parse and create NDEF messages
 
+## Usage
+See `example` directory.
+```sh
+npm install ntag424
+# keep in mind this project is AGPL licensed
+```
+
 ## Development
 ```sh
 npm ci
