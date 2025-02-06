@@ -8,7 +8,7 @@
     - `apt install libpcsclite-dev pcsc-tools`
     - In case you have a ThinkPad with a built-in reader, it might conflict with libpcsclite. This may help: https://stackoverflow.com/a/66558992
     - This library was tested with the reader `Alcor Micro AU9540`
-- You can use [`nistkdf-800-108`](https://github.com/nikeee/nistkdf-800-108) for key diversification/derivation.
+- You can use [`crypto.hkdf`](https://nodejs.org/api/crypto.html#cryptohkdfdigest-ikm-salt-info-keylen-callback) (builtin) or [`nistkdf-800-108`](https://github.com/nikeee/nistkdf-800-108) for key diversification/derivation.
 - [`ndef`](https://github.com/don/ndef-js) to parse and create NDEF messages
 
 ## Usage
