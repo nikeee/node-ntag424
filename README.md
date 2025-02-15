@@ -38,6 +38,7 @@ npm test # compile + tests
 - https://github.com/AndroidCrypto/Ntag424SdmFeature
 - https://github.com/johnnyb/ntag424-java
 - https://gitlab.com/bettse/accessgranted
+- https://gitlab.com/bettse/ntag424_personalization
 - https://github.com/MxAshUp/ntag424-js
 
 Big thanks to all of you!
