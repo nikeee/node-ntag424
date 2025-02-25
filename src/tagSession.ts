@@ -558,10 +558,7 @@ export function createTagSession(
 				throw new Error("newKey does not have the same length as oldKey");
 			}
 
-			const keyXor = Buffer.alloc(newKey.length);
-			for (let i = 0; i < keyXor.length; ++i) {
-				keyXor[i] = newKey[i] ^ oldKey[i];
-			}
+			const keyXor = buffer.xor(oldKey, newKey);
 			const crc32 = ntagCrypto.crc(newKey);
 
 			keyData = Buffer.from([
