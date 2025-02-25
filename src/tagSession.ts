@@ -782,7 +782,7 @@ export function createTagSession(
 
 		const result = await sendWithMac(command, header, encryptedData, comment);
 
-		if (result.isError() || result.data?.length === 0) {
+		if (result.isError() || result.data === null || result.data.length === 0) {
 			return new CommandResponse(result.status, null);
 		}
 
