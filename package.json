@@ -25,14 +25,14 @@
     ],
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",
-        "@types/node": "^22.13.0",
+        "@types/node": "^22.13.5",
         "expect": "^29.7.0",
         "ndef": "^0.2.0",
         "rimraf": "^6.0.1",
         "typescript": "^5.8.0-beta"
     },
     "dependencies": {
-        "@nikeee/aes-cmac": "^1.1.0",
+        "@nikeee/aes-cmac": "^1.2.0",
         "crc": "^4.3.2"
     },
     "repository": {
