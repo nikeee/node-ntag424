@@ -704,7 +704,11 @@ export function createTagSession(
 			return macedResult;
 		}
 
-		const macedPayload = macedResult.getDataOrThrow();
+		const macedPayload = macedResult.data;
+		if (macedPayload === null) {
+			// there is no additional data to be checked
+			return new CommandResponse(macedResult.status, null);
+		}
 
 		const actualResponseMac = macedPayload.subarray(-8);
 		const responseData = macedPayload.subarray(0, -8);
