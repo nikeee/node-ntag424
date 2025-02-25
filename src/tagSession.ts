@@ -301,10 +301,10 @@ export function createTagSession(
 	async function authStep1(keyNumber: number): Promise<Buffer> {
 		const result = await sendNativeCommand(
 			0x71,
-			Buffer.from([
+			Buffer.of(
 				keyNumber,
 				0x00, // Length of the PCD capability vector (NT4H2421Gx.pdf 10.4.1)
-			]),
+			),
 			null,
 			null,
 			authStep1.name,
@@ -355,7 +355,7 @@ export function createTagSession(
 	async function getUid() {
 		// TODO: Find this in the docs and replace it with some iso command
 		const res = await send(
-			Buffer.from([0xff, 0xca, 0x00, 0x00, 0x00]),
+			Buffer.of(0xff, 0xca, 0x00, 0x00, 0x00),
 			getUid.name,
 		);
 		if (res.at(-1) !== 0x00) {
@@ -386,7 +386,7 @@ export function createTagSession(
 
 		const result = await sendWithMac(
 			0xf5,
-			Buffer.from([fileNumber & 0xf]),
+			Buffer.of(fileNumber & 0xf),
 			null,
 			getFileSettingsRaw.name,
 		);
@@ -419,7 +419,7 @@ export function createTagSession(
 		}
 
 		const command = 0x5f;
-		const header = Buffer.from([fileNumber & 0b0000_1111]);
+		const header = Buffer.of(fileNumber & 0b0000_1111);
 
 		if (!authentication) {
 			const result = await sendPlainCommand(
@@ -576,7 +576,7 @@ export function createTagSession(
 
 		const result = await sendEncrypted(
 			0xc4,
-			Buffer.from([keyNumber]),
+			Buffer.of(keyNumber),
 			keyData,
 			changeKey.name,
 		);
@@ -690,14 +690,14 @@ export function createTagSession(
 			return await sendPlainCommand(command, header, data, comment);
 		}
 
-		const macIn = Buffer.from([
+		const macIn = Buffer.of(
 			command,
 			0x00,
 			0x00,
 			...authentication.TI,
 			...header,
 			...(data ?? []),
-		]);
+		);
 		macIn.writeUInt16LE(commandCounter, 1);
 
 		const longMac = ntagCrypto.MAC(authentication.sessionMacKey, macIn);
@@ -721,12 +721,12 @@ export function createTagSession(
 		const actualResponseMac = macedPayload.subarray(-8);
 		const responseData = macedPayload.subarray(0, -8);
 
-		const resultMacInputHeader = Buffer.from([
+		const resultMacInputHeader = Buffer.of(
 			macedResult.status.status2,
 			0x00,
 			0x00, // counter
 			...authentication.TI,
-		]);
+		);
 		resultMacInputHeader.writeUInt16LE(commandCounter, 1);
 
 		const resultMacInput = Buffer.concat([resultMacInputHeader, responseData]);

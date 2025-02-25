@@ -108,7 +108,7 @@ export function encryptCbc(
 	let dataToEncrypt = data;
 
 	if (addPadding) {
-		const dataToPad = Buffer.concat([data, Buffer.from([0x80])]);
+		const dataToPad = Buffer.concat([data, Buffer.of(0x80)]);
 		const paddingLength = blockSize - (dataToPad.byteLength % blockSize);
 		dataToEncrypt =
 			paddingLength === blockSize

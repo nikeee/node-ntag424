@@ -16,15 +16,15 @@ export function format(buffer: Buffer): string {
 }
 
 export const create = Object.freeze({
-	u8le: (n: number) => Buffer.from([n & 0xff]),
-	u16le: (n: number) => Buffer.from([n & 0xff, (n >> 8) & 0xff]),
+	u8le: (n: number) => Buffer.of(n & 0xff),
+	u16le: (n: number) => Buffer.of(n & 0xff, (n >> 8) & 0xff),
 	u24le: (n: number) =>
-		Buffer.from([n & 0xff, (n >> 8) & 0xff, (n >> 16) & 0xff]),
+		Buffer.of(n & 0xff, (n >> 8) & 0xff, (n >> 16) & 0xff),
 	u32le: (n: number) =>
-		Buffer.from([
+		Buffer.of(
 			(n >> 0) & 0xff,
 			(n >> 8) & 0xff,
 			(n >> 16) & 0xff,
 			(n >> 24) & 0xff,
-		]),
+		),
 });
