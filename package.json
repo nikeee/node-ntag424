@@ -1,6 +1,6 @@
 {
     "name": "ntag424",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "description": "A Node.js implementation for interop with NTAG 424 DNA.",
     "author": "Niklas Mollenhauer",
     "license": "AGPL-3.0-only",
