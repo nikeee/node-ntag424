@@ -544,31 +544,22 @@ export function createTagSession(
 		newKey: Buffer,
 		newKeyVersion: number,
 	): Promise<void> {
+		if (oldKey.byteLength !== 16) {
+			throw new Error("`oldKey` must be 16 bytes long");
+		}
+		if (newKey.byteLength !== 16) {
+			throw new Error("`newKey` must be 16 bytes long");
+		}
+
 		let keyData: Buffer;
-
 		if (keyNumber === 0) {
-			keyData = Buffer.from([
-				...newKey,
-				newKeyVersion & 0xff,
-				0x80,
-				...Buffer.alloc(14),
-			]);
+			keyData = Buffer.from([...newKey, newKeyVersion & 0xff]);
 		} else {
-			if (newKey.length !== oldKey.length) {
-				throw new Error("newKey does not have the same length as oldKey");
-			}
-
-			const keyXor = buffer.xor(oldKey, newKey);
-			const crc32 = ntagCrypto.crc(newKey);
-
 			keyData = Buffer.from([
-				...keyXor,
+				...buffer.xor(oldKey, newKey),
 				newKeyVersion & 0xff,
-				...Buffer.alloc(4), // crc32
-				0x80,
-				...Buffer.alloc(10),
+				...buffer.create.u32le(ntagCrypto.crc(newKey)),
 			]);
-			keyData.writeUInt32LE(crc32, 17);
 		}
 
 		const result = await sendEncrypted(
