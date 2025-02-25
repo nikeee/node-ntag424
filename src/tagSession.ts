@@ -276,9 +276,9 @@ export function createTagSession(
 		responseMaxLength = 40,
 	) {
 		const b = value instanceof Buffer ? value : Buffer.from(value);
-		log?.debug(`[${comment}}]`, "-> %s", buffer.format(b));
+		log?.debug(`[${comment}]`, "-> %s", buffer.format(b));
 		const data = await reader.transmit(b, responseMaxLength);
-		log?.debug(`[${comment}}]`, "<- %s", buffer.format(data));
+		log?.debug(`[${comment}]`, "<- %s", buffer.format(data));
 		return data;
 	}
 
