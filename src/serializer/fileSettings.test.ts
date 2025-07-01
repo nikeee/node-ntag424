@@ -103,7 +103,7 @@ describe("`serializeForChangeFileSettings`", async () => {
 				encodedReadCounterLength: 3 * 2,
 				encodedUidLength: 7 * 2,
 			}),
-		).toThrowError(error);
+		).toThrow(error);
 	}
 
 	test("smoke test", async () => {

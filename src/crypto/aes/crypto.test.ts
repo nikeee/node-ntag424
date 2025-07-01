@@ -91,7 +91,7 @@ describe("crypto module", async () => {
 			const key = Buffer.alloc(16, 42);
 
 			encryptCbc(key, plaintextExpected, iv, false);
-		}).toThrowError(
+		}).toThrow(
 			new Error(
 				"`dataToEncrypt` is not a multiple of the block length and there is no padding to be applied. This can not happen.",
 			),
@@ -103,7 +103,7 @@ describe("crypto module", async () => {
 			const key = Buffer.alloc(16, 42);
 
 			decryptCbc(key, plaintextExpected, iv, false);
-		}).toThrowError(new Error("`data` is not a multiple of blockSize long."));
+		}).toThrow(new Error("`data` is not a multiple of blockSize long."));
 
 		expect(() => {
 			const plaintextExpected = Buffer.alloc(13, 69);
@@ -111,7 +111,7 @@ describe("crypto module", async () => {
 			const key = Buffer.alloc(16, 42);
 
 			decryptCbc(key, plaintextExpected, iv, false);
-		}).toThrowError(new Error("`data` is not a multiple of blockSize long."));
+		}).toThrow(new Error("`data` is not a multiple of blockSize long."));
 	});
 
 	test("aes-128-ecb invalid size", async () => {
@@ -129,14 +129,14 @@ describe("crypto module", async () => {
 			const key = Buffer.alloc(16, 42);
 
 			encryptEcb(key, plaintext);
-		}).toThrowError(new Error("`data` is not a multiple of blockSize long."));
+		}).toThrow(new Error("`data` is not a multiple of blockSize long."));
 
 		expect(() => {
 			const plaintext = Buffer.alloc(17, 69);
 			const key = Buffer.alloc(16, 42);
 
 			encryptEcb(key, plaintext);
-		}).toThrowError(new Error("`data` is not a multiple of blockSize long."));
+		}).toThrow(new Error("`data` is not a multiple of blockSize long."));
 	});
 });
 
