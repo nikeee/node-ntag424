@@ -26,7 +26,7 @@
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",
         "@types/node": "^24.0.8",
-        "expect": "^29.7.0",
+        "expect": "^30.0.3",
         "ndef": "^0.2.0",
         "rimraf": "^6.0.1",
         "typescript": "^5.8.3"
