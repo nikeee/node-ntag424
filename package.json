@@ -13,8 +13,8 @@
         "lint": "biome lint ./src",
         "format": "biome format --write ./src && biome lint --write ./src && biome check --write ./src",
         "clean": "rimraf lib",
-        "compile": "tsc",
-        "prepare": "npm run clean && npm run compile"
+        "build": "tsc",
+        "prepare": "npm run clean && npm run build"
     },
     "keywords": [
         "ntag424",

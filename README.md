@@ -21,8 +21,8 @@ npm install ntag424
 ## Development
 ```sh
 npm ci
-npm run compile
-npm test # compile + tests
+npm run build
+npm test # build + tests
 ```
 
 ## Resources Used
