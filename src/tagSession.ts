@@ -1,16 +1,15 @@
-import { type EncryptionParams, deriveSessionKeys } from "./crypto/session.ts";
+import * as buffer from "./buffer.ts";
+import * as ntagCrypto from "./crypto/aes/crypto.ts";
+import { deriveSessionKeys, type EncryptionParams } from "./crypto/session.ts";
+import { CommandResponse } from "./response.ts";
 import type { CommMode } from "./serializer/commMode.ts";
 import type { ConfigurationUpdate } from "./serializer/configuration.ts";
+import * as configuration from "./serializer/configuration.ts";
 import type {
 	FileSettings,
 	GetFileSettings,
 	TagParams,
 } from "./serializer/fileSettings.ts";
-
-import * as buffer from "./buffer.ts";
-import * as ntagCrypto from "./crypto/aes/crypto.ts";
-import { CommandResponse } from "./response.ts";
-import * as configuration from "./serializer/configuration.ts";
 import * as fileSettings from "./serializer/fileSettings.ts";
 
 export type Reader = {
@@ -150,6 +149,7 @@ const standardFileIds = {
 /**
  * Section 8.2.3 NT4H2421Gx.pdf
  */
+// biome-ignore lint/correctness/noUnusedVariables: maybe used some day :harold:
 const standardFileNumbers = {
 	/** Capability Container */
 	cc: 1,

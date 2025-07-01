@@ -2,8 +2,8 @@ import * as crypto from "node:crypto";
 
 import aesCmac from "@nikeee/aes-cmac";
 
-export { crcjam as crc } from "crc";
 export { default as MAC } from "@nikeee/aes-cmac";
+export { crcjam as crc } from "crc";
 
 const blockSize = 16;
 

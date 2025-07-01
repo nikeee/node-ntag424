@@ -1,6 +1,5 @@
-import * as ntagCrypto from "./crypto.ts";
-
 import MAC from "@nikeee/aes-cmac";
+import * as ntagCrypto from "./crypto.ts";
 
 export type DecryptdPiccData = {
 	/** `null` if the encryted PICC data did not contain the UID. */

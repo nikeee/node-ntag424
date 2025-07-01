@@ -1,6 +1,5 @@
-import * as ntagCrypto from "./aes/crypto.ts";
-
 import { rotateRight } from "../buffer.ts";
+import * as ntagCrypto from "./aes/crypto.ts";
 
 export type EncryptionParams = Readonly<{
 	TI: Buffer;
