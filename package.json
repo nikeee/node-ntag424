@@ -24,15 +24,15 @@
         "NT4H2421Gx"
     ],
     "devDependencies": {
-        "@biomejs/biome": "^2.0.6",
-        "@types/node": "^24.0.10",
+        "@biomejs/biome": "^2.1.1",
+        "@types/node": "^24.0.13",
         "expect": "^30.0.4",
         "ndef": "^0.2.0",
         "rimraf": "^6.0.1",
         "typescript": "^5.8.3"
     },
     "dependencies": {
-        "@nikeee/aes-cmac": "^1.2.4",
+        "@nikeee/aes-cmac": "^1.2.5",
         "crc": "^4.3.2"
     },
     "repository": {
