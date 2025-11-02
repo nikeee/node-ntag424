@@ -4,17 +4,16 @@
     "description": "A Node.js implementation for interop with NTAG 424 DNA.",
     "author": "Niklas Mollenhauer",
     "license": "AGPL-3.0-only",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "type": "module",
     "scripts": {
+        "build": "tsdown",
         "test": "tsc --noEmit && node --test",
         "ci": "biome ci ./src",
         "lint": "biome lint ./src",
-        "format": "biome format --write ./src && biome lint --write ./src && biome check --write ./src",
-        "clean": "rimraf lib",
-        "build": "tsc",
-        "prepare": "npm run clean && npm run build"
+        "format": "biome check --write ./src",
+        "prepare": "npm run build"
     },
     "keywords": [
         "ntag424",
@@ -33,7 +32,8 @@
     },
     "dependencies": {
         "@nikeee/aes-cmac": "^1.2.7",
-        "crc": "^4.3.2"
+        "crc": "^4.3.2",
+        "tsdown": "^0.15.12"
     },
     "repository": {
         "type": "git",

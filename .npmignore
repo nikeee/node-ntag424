@@ -11,3 +11,4 @@ biome.json
 /src
 tsconfig.json
 /example
+tsdown.config.ts

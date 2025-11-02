@@ -1,11 +1,13 @@
 {
     "compilerOptions": {
         "target": "esnext",
-        "module": "nodenext",
+        "module": "esnext",
+        "moduleResolution": "bundler",
+
+        "noEmit": true,
 
         "lib": ["es2024"],
         "declaration": true,
-        "outDir": "lib",
 
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
