@@ -27,12 +27,12 @@
         "@types/node": "^24.9.2",
         "expect": "^30.2.0",
         "ndef": "^0.2.0",
+        "tsdown": "^0.15.12",
         "typescript": "^5.9.3"
     },
     "dependencies": {
         "@nikeee/aes-cmac": "^1.2.7",
-        "crc": "^4.3.2",
-        "tsdown": "^0.15.12"
+        "crc": "^4.3.2"
     },
     "repository": {
         "type": "git",
