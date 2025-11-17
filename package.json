@@ -23,11 +23,11 @@
         "NT4H2421Gx"
     ],
     "devDependencies": {
-        "@biomejs/biome": "^2.3.5",
-        "@types/node": "^24.10.0",
+        "@biomejs/biome": "^2.3.6",
+        "@types/node": "^24.10.1",
         "expect": "^30.2.0",
         "ndef": "^0.2.0",
-        "tsdown": "^0.16.2",
+        "tsdown": "^0.16.5",
         "typescript": "^5.9.3"
     },
     "dependencies": {
