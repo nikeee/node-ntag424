@@ -28,7 +28,7 @@
         "expect": "^30.2.0",
         "ndef": "^0.2.0",
         "tsdown": "^0.21.7",
-        "typescript": "^5.9.3"
+        "typescript": "^6.0.2"
     },
     "dependencies": {
         "@nikeee/aes-cmac": "^1.2.7",
