@@ -9,7 +9,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-slim
+    # not using ubuntu-slim due to trusted publishing
+    runs-on: ubuntu-latest
 
     permissions:
       contents: read
