@@ -27,7 +27,7 @@
         "@types/node": "^26.4.0",
         "expect": "^30.5.1",
         "ndef": "^0.2.0",
-        "tsdown": "^0.22.14",
+        "tsdown": "^0.23.0",
         "typescript": "^7.0.2"
     },
     "dependencies": {
